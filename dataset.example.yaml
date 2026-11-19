@@ -1,0 +1,43 @@
+path: /Users/brian/Library/CloudStorage/Box-Box/Documents/Python/data/mahjong
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: 1m
+  1: 1p
+  2: 1s
+  3: 1z
+  4: 2m
+  5: 2p
+  6: 2s
+  7: 2z
+  8: 3m
+  9: 3p
+  10: 3s
+  11: 3z
+  12: 4m
+  13: 4p
+  14: 4s
+  15: 4z
+  16: 5m
+  17: 5p
+  18: 5s
+  19: 5z
+  20: 6m
+  21: 6p
+  22: 6s
+  23: 6z
+  24: 7m
+  25: 7p
+  26: 7s
+  27: 7z
+  28: 8m
+  29: 8p
+  30: 8s
+  31: 9m
+  32: 9p
+  33: 9s
+  34: UNKNOWN
+  35: 0m
+  36: 0p
+  37: 0s
