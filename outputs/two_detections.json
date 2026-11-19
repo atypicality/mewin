@@ -1,0 +1,19 @@
+{
+  "image": "/Users/brian/Library/CloudStorage/Box-Box/Documents/Python/examples/two.jpg",
+  "weights": "/Users/brian/Library/CloudStorage/Box-Box/Documents/Python/models/mahjong-ar-yolov8n.onnx",
+  "confidence_threshold": 0.4,
+  "detections": [
+    {
+      "class_id": 7,
+      "confidence": 0.927,
+      "xyxy": [
+        24.51,
+        26.34,
+        268.82,
+        389.36
+      ],
+      "tile": "2p",
+      "name": "2 circles"
+    }
+  ]
+}

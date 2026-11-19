@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mahjong tile reader</title><link rel="stylesheet" href="/style.css?v=gemini-1"><script src="/app.js?v=gemini-1" defer></script></head>
+<body>
+<header><a class="brand" href="/">Mahjong tile reader</a><span class="local">Local app</span></header>
+<main>
+<div class="intro"><h1>Read your tiles.</h1><p>Upload a photo to identify Mahjong tiles.</p></div>
+<div class="workspace">
+<aside class="panel upload-panel">
+<details id="upload-controls" open>
+<summary><strong>Photo upload</strong><span id="filename" class="filename">No image selected</span><span class="upload-toggle">Choose / change photo</span></summary>
+<div class="upload-body">
+<label class="dropzone" id="dropzone"><input id="file" type="file" accept="image/jpeg,image/png,image/webp,image/heif,image/heic,.heif,.heic"><strong>Drop a photo here</strong><span>or <u>browse files</u></span><small>JPG, PNG, WebP, HEIF / HEIC · up to 50 MB</small></label>
+<div class="upload-info"><p class="hint">Large photos resize automatically. Up to 80 MP.</p><div class="note"><strong>Supported tiles</strong><p>Characters, circles, bamboo, four winds, three dragons, flowers, and seasons. Jokers and red fives are not separate classes in this model. Check each prediction against the photo.</p></div><div class="privacy">YOLO and CLIP process photos on this computer. Gemini sends your chat and any attached photo to Google.</div></div>
+</div></details>
+<div class="toolbar">
+<div class="model-control"><label class="model-label" for="model">Model</label><select id="model"><option value="yolo">YOLO · tile detector</option><option value="clip">CLIP · single-tile classifier</option></select><p id="model-help" class="hint">Finds tile locations and predicts each tile.</p></div>
+<div id="detector-controls"><div class="control"><label for="confidence">Confidence threshold</label><output id="confidence-value">40%</output></div><input id="confidence" type="range" min="1" max="100" value="40"><p class="hint">Higher values show only stronger predictions.</p></div>
+<button id="analyze" class="primary" disabled>Identify tiles</button>
+</div><p id="status" role="status" aria-live="polite">Choose an image to get started.</p>
+</aside>
+<section class="panel result-panel"><div class="result-heading"><div class="section-heading"><h2>Photo</h2></div><div class="tabs" aria-label="Image view"><button id="original-tab" aria-pressed="true">Original</button><button id="annotated-tab" aria-pressed="false" disabled>Marked</button></div></div>
+<div class="preview" id="preview"><div id="empty"><h3>No photo selected</h3><p>Choose an image to get started.</p></div><img id="preview-image" alt="Uploaded Mahjong image" hidden></div>
+</section>
+<section class="panel results" id="results" hidden aria-live="polite">
+<div class="answer"><span class="eyebrow" id="result-model">MODEL RESULT</span><h2 id="result-title"></h2><p id="result-description"></p></div>
+<div id="tiles" class="tiles"></div>
+<div class="result-footer"><p id="timing"></p><div class="downloads"><a id="download-image" download="mahjong-detected.jpg">Save marked photo</a><a id="download-json" download="mahjong-detections.json">Export JSON</a></div></div>
+<p class="score-note" id="score-note">Scores indicate model confidence, not the probability that a prediction is correct.</p>
+</section>
+<section class="panel assistant-panel" aria-labelledby="assistant-title">
+<div class="assistant-heading"><h2 id="assistant-title">Gemini Mahjong assistant</h2><button id="new-chat" type="button">New chat</button></div>
+<p id="assistant-config" class="hint" role="status">Checking Gemini configuration…</p>
+<p class="hint">Ask about tiles, patterns, or your hand. Scoring advice is an AI estimate, not a verified calculation. Tell Gemini which rules you play.</p>
+<div id="chat-messages" role="log" aria-live="polite" aria-label="Conversation"></div>
+<form id="chat-form">
+<label for="chat-question">Your question</label>
+<textarea id="chat-question" rows="3" maxlength="6000" placeholder="What tiles are in this photo? I play Hong Kong Mahjong."></textarea>
+<label class="attach-photo"><input id="chat-photo" type="checkbox"> Include the current photo with this message</label>
+<p class="hint">Sending shares your conversation and any included photo with Google. API usage may incur charges. New chat clears this browser’s conversation.</p>
+<div class="chat-actions"><button id="ask-photo" type="button">Analyze photo with Gemini</button><button id="chat-send" class="primary" type="submit">Send to Gemini</button></div>
+<p id="chat-status" role="status" aria-live="polite"></p>
+</form>
+</section></div>
+</main></body></html>

@@ -1,0 +1,19 @@
+{
+  "image": "/Users/brian/Library/CloudStorage/Box-Box/Documents/Python/examples/five.jpg",
+  "weights": "/Users/brian/Library/CloudStorage/Box-Box/Documents/Python/models/mahjong-ar-yolov8n.onnx",
+  "confidence_threshold": 0.4,
+  "detections": [
+    {
+      "class_id": 22,
+      "confidence": 0.894,
+      "xyxy": [
+        92.16,
+        56.78,
+        290.74,
+        346.12
+      ],
+      "tile": "5p",
+      "name": "5 circles"
+    }
+  ]
+}

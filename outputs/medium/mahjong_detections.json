@@ -1,0 +1,6 @@
+{
+  "image": "/Users/brian/Library/CloudStorage/Box-Box/Documents/Python/examples/mahjong.webp",
+  "weights": "/Users/brian/Library/CloudStorage/Box-Box/Documents/Python/models/mahjong-yolo11m.pt",
+  "confidence_threshold": 0.15,
+  "detections": []
+}
