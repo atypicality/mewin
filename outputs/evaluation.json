@@ -1,0 +1,526 @@
+{
+  "timestamp_utc": "2026-11-20T02:42:44.849422+00:00",
+  "python": "3.9.6",
+  "weights": "/Users/brian/Documents/GitHub/mewin/models/mahjong-ar-yolov8n.onnx",
+  "weights_sha256": "babdb503fd5dd5640d9c232e37a56af3a01f3297aeeeb44e8f62fa57edbc2b9d",
+  "confidence_threshold": 0.4,
+  "pipeline": "web_app.analyze / YOLO / CPU / 640",
+  "manifest": {
+    "schema_version": 1,
+    "cases": [
+      {
+        "id": "D01",
+        "image": "examples/one.jpg",
+        "expected": {
+          "1p": 1
+        },
+        "status": "ready",
+        "split": "development",
+        "slice": "illustration",
+        "robustness": false,
+        "notes": "Visually reviewed existing development image; not held out."
+      },
+      {
+        "id": "D02",
+        "image": "examples/images.jpg",
+        "expected": {
+          "1p": 1
+        },
+        "status": "ready",
+        "split": "development",
+        "slice": "clear",
+        "robustness": true,
+        "notes": "Visually reviewed existing development image; not held out."
+      },
+      {
+        "id": "D03",
+        "image": "examples/five.jpg",
+        "expected": {
+          "5p": 1
+        },
+        "status": "ready",
+        "split": "development",
+        "slice": "clear",
+        "robustness": true,
+        "notes": "Visually reviewed existing development image; not held out."
+      },
+      {
+        "id": "D04",
+        "image": "examples/two.jpg",
+        "expected": {
+          "2p": 1
+        },
+        "status": "ready",
+        "split": "development",
+        "slice": "clear",
+        "robustness": true,
+        "notes": "Visually reviewed existing development image; not held out."
+      },
+      {
+        "id": "D05",
+        "image": "examples/dragon.jpg",
+        "expected": {
+          "5z": 1
+        },
+        "status": "ready",
+        "split": "development",
+        "slice": "clear",
+        "robustness": true,
+        "notes": "Visually reviewed existing development image; not held out."
+      },
+      {
+        "id": "D06",
+        "image": "examples/mahjong.webp",
+        "expected": {
+          "1s": 1
+        },
+        "status": "ready",
+        "split": "development",
+        "slice": "illustration",
+        "robustness": false,
+        "notes": "Visually reviewed existing development image; not held out."
+      },
+      {
+        "id": "T01",
+        "image": null,
+        "expected": null,
+        "status": "pending",
+        "split": "test",
+        "slice": "clear",
+        "robustness": true,
+        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+      },
+      {
+        "id": "T02",
+        "image": null,
+        "expected": null,
+        "status": "pending",
+        "split": "test",
+        "slice": "clear",
+        "robustness": true,
+        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+      },
+      {
+        "id": "T03",
+        "image": null,
+        "expected": null,
+        "status": "pending",
+        "split": "test",
+        "slice": "clear",
+        "robustness": true,
+        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+      },
+      {
+        "id": "T04",
+        "image": null,
+        "expected": null,
+        "status": "pending",
+        "split": "test",
+        "slice": "clear",
+        "robustness": true,
+        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+      },
+      {
+        "id": "T05",
+        "image": null,
+        "expected": null,
+        "status": "pending",
+        "split": "test",
+        "slice": "clear",
+        "robustness": true,
+        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+      },
+      {
+        "id": "T06",
+        "image": null,
+        "expected": null,
+        "status": "pending",
+        "split": "test",
+        "slice": "clear",
+        "robustness": true,
+        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+      },
+      {
+        "id": "T07",
+        "image": null,
+        "expected": null,
+        "status": "pending",
+        "split": "test",
+        "slice": "clear",
+        "robustness": true,
+        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+      },
+      {
+        "id": "T08",
+        "image": null,
+        "expected": null,
+        "status": "pending",
+        "split": "test",
+        "slice": "clear",
+        "robustness": true,
+        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+      },
+      {
+        "id": "T09",
+        "image": null,
+        "expected": null,
+        "status": "pending",
+        "split": "test",
+        "slice": "multi_tile",
+        "robustness": false,
+        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+      },
+      {
+        "id": "T10",
+        "image": null,
+        "expected": null,
+        "status": "pending",
+        "split": "test",
+        "slice": "multi_tile",
+        "robustness": false,
+        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+      },
+      {
+        "id": "T11",
+        "image": null,
+        "expected": null,
+        "status": "pending",
+        "split": "test",
+        "slice": "multi_tile",
+        "robustness": false,
+        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+      },
+      {
+        "id": "T12",
+        "image": null,
+        "expected": null,
+        "status": "pending",
+        "split": "test",
+        "slice": "multi_tile",
+        "robustness": false,
+        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+      },
+      {
+        "id": "T13",
+        "image": null,
+        "expected": null,
+        "status": "pending",
+        "split": "test",
+        "slice": "difficult",
+        "robustness": false,
+        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+      },
+      {
+        "id": "T14",
+        "image": null,
+        "expected": null,
+        "status": "pending",
+        "split": "test",
+        "slice": "difficult",
+        "robustness": false,
+        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+      },
+      {
+        "id": "T15",
+        "image": null,
+        "expected": null,
+        "status": "pending",
+        "split": "test",
+        "slice": "difficult",
+        "robustness": false,
+        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+      },
+      {
+        "id": "T16",
+        "image": null,
+        "expected": null,
+        "status": "pending",
+        "split": "test",
+        "slice": "difficult",
+        "robustness": false,
+        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+      },
+      {
+        "id": "T17",
+        "image": null,
+        "expected": null,
+        "status": "pending",
+        "split": "test",
+        "slice": "negative",
+        "robustness": false,
+        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+      },
+      {
+        "id": "T18",
+        "image": null,
+        "expected": null,
+        "status": "pending",
+        "split": "test",
+        "slice": "negative",
+        "robustness": false,
+        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+      },
+      {
+        "id": "T19",
+        "image": null,
+        "expected": null,
+        "status": "pending",
+        "split": "test",
+        "slice": "negative",
+        "robustness": false,
+        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+      },
+      {
+        "id": "T20",
+        "image": null,
+        "expected": null,
+        "status": "pending",
+        "split": "test",
+        "slice": "negative",
+        "robustness": false,
+        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+      }
+    ]
+  },
+  "summary": {
+    "development": {
+      "cases": 6,
+      "passed": 5,
+      "exact_hand_accuracy": 0.8333333333333334,
+      "slices": {
+        "clear": {
+          "cases": 4,
+          "passed": 4,
+          "exact_hand_accuracy": 1.0
+        },
+        "illustration": {
+          "cases": 2,
+          "passed": 1,
+          "exact_hand_accuracy": 0.5
+        }
+      },
+      "robustness": {
+        "pairs": 4,
+        "flip_rate": 0.0,
+        "original": {
+          "cases": 4,
+          "passed": 4,
+          "exact_hand_accuracy": 1.0
+        },
+        "darkened": {
+          "cases": 4,
+          "passed": 4,
+          "exact_hand_accuracy": 1.0
+        }
+      }
+    },
+    "test": {
+      "cases": 0,
+      "passed": 0,
+      "exact_hand_accuracy": null,
+      "slices": {},
+      "robustness": {
+        "pairs": 0,
+        "flip_rate": null,
+        "original": {
+          "cases": 0,
+          "passed": 0,
+          "exact_hand_accuracy": null
+        },
+        "darkened": {
+          "cases": 0,
+          "passed": 0,
+          "exact_hand_accuracy": null
+        }
+      }
+    }
+  },
+  "pending_cases": [
+    "T01",
+    "T02",
+    "T03",
+    "T04",
+    "T05",
+    "T06",
+    "T07",
+    "T08",
+    "T09",
+    "T10",
+    "T11",
+    "T12",
+    "T13",
+    "T14",
+    "T15",
+    "T16",
+    "T17",
+    "T18",
+    "T19",
+    "T20"
+  ],
+  "results": [
+    {
+      "id": "D01",
+      "image": "examples/one.jpg",
+      "expected": {
+        "1p": 1
+      },
+      "status": "ready",
+      "split": "development",
+      "slice": "illustration",
+      "robustness": null,
+      "notes": "Visually reviewed existing development image; not held out.",
+      "image_sha256": "ea48548c00b95c94a918be6934903340b73cf17bbff21846d52c2371f8921e1f",
+      "observed": {
+        "1p": 1
+      },
+      "passed": true,
+      "missing": {},
+      "extra": {},
+      "failure_type": "pass"
+    },
+    {
+      "id": "D02",
+      "image": "examples/images.jpg",
+      "expected": {
+        "1p": 1
+      },
+      "status": "ready",
+      "split": "development",
+      "slice": "clear",
+      "robustness": {
+        "brightness_factor": 0.7,
+        "observed": {
+          "1p": 1
+        },
+        "flipped": false,
+        "passed": true,
+        "missing": {},
+        "extra": {},
+        "failure_type": "pass"
+      },
+      "notes": "Visually reviewed existing development image; not held out.",
+      "image_sha256": "1f7e44bbe1ba6ccd4e86306fc4df55ca6237dbe62102ea41bf7d747404aeed29",
+      "observed": {
+        "1p": 1
+      },
+      "passed": true,
+      "missing": {},
+      "extra": {},
+      "failure_type": "pass"
+    },
+    {
+      "id": "D03",
+      "image": "examples/five.jpg",
+      "expected": {
+        "5p": 1
+      },
+      "status": "ready",
+      "split": "development",
+      "slice": "clear",
+      "robustness": {
+        "brightness_factor": 0.7,
+        "observed": {
+          "5p": 1
+        },
+        "flipped": false,
+        "passed": true,
+        "missing": {},
+        "extra": {},
+        "failure_type": "pass"
+      },
+      "notes": "Visually reviewed existing development image; not held out.",
+      "image_sha256": "d3c0732f682ea5d300e52608d0640b3b79e8d035002caf96fa0844d0ed032d92",
+      "observed": {
+        "5p": 1
+      },
+      "passed": true,
+      "missing": {},
+      "extra": {},
+      "failure_type": "pass"
+    },
+    {
+      "id": "D04",
+      "image": "examples/two.jpg",
+      "expected": {
+        "2p": 1
+      },
+      "status": "ready",
+      "split": "development",
+      "slice": "clear",
+      "robustness": {
+        "brightness_factor": 0.7,
+        "observed": {
+          "2p": 1
+        },
+        "flipped": false,
+        "passed": true,
+        "missing": {},
+        "extra": {},
+        "failure_type": "pass"
+      },
+      "notes": "Visually reviewed existing development image; not held out.",
+      "image_sha256": "14fbb994c26b2b3ac3eab09b57c0675b8db1755ad00bb10dbc71fdb9ab9ff8a4",
+      "observed": {
+        "2p": 1
+      },
+      "passed": true,
+      "missing": {},
+      "extra": {},
+      "failure_type": "pass"
+    },
+    {
+      "id": "D05",
+      "image": "examples/dragon.jpg",
+      "expected": {
+        "5z": 1
+      },
+      "status": "ready",
+      "split": "development",
+      "slice": "clear",
+      "robustness": {
+        "brightness_factor": 0.7,
+        "observed": {
+          "5z": 1
+        },
+        "flipped": false,
+        "passed": true,
+        "missing": {},
+        "extra": {},
+        "failure_type": "pass"
+      },
+      "notes": "Visually reviewed existing development image; not held out.",
+      "image_sha256": "d39f3d55586626f232340a003b54d42ba4baf6acf95580e646e9b3e67f32b99c",
+      "observed": {
+        "5z": 1
+      },
+      "passed": true,
+      "missing": {},
+      "extra": {},
+      "failure_type": "pass"
+    },
+    {
+      "id": "D06",
+      "image": "examples/mahjong.webp",
+      "expected": {
+        "1s": 1
+      },
+      "status": "ready",
+      "split": "development",
+      "slice": "illustration",
+      "robustness": null,
+      "notes": "Visually reviewed existing development image; not held out.",
+      "image_sha256": "0dca6a6257f10330b5e99e527ab17ab2a0fadabc2f2138aeb1cedc3f02590455",
+      "observed": {
+        "1S": 1
+      },
+      "passed": false,
+      "missing": {
+        "1s": 1
+      },
+      "extra": {
+        "1S": 1
+      },
+      "failure_type": "missing_and_extra"
+    }
+  ]
+}

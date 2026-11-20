@@ -239,3 +239,18 @@ relevant game details before discussing scores.
 
 API references: https://aistudio.google.com/docs/get-started and
 https://aistudio.google.com/docs/image-understanding.
+
+## Formal evaluation
+
+[Evaluation plan](EVALUATION_PLAN.md): 10 selected HEIC photos (four singles,
+four groups, two rotated tiles) plus six separate development examples. Labels
+are in `evaluation/cases.json`; teammate review is pending. No negative scenes
+were supplied.
+
+```sh
+python evaluate.py --validate-only
+python evaluate.py
+```
+
+Results: `outputs/evaluation.json` includes exact-hand accuracy, failures by
+condition, and paired brightness checks for the web app's YOLO detector.
