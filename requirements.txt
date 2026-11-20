@@ -1,6 +1,8 @@
 ultralytics==8.4.171
-onnx==1.17.0
-onnxruntime==1.19.2
+onnx==1.20.1
+onnxruntime==1.20.1
 coremltools==9.0; sys_platform == "darwin"
 pillow-heif==1.1.1
+torch>=2.6.0
 transformers==4.57.6
+huggingface-hub>=0.34.0,<1.0

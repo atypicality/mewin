@@ -3,6 +3,18 @@ import ast
 from dataclasses import dataclass
 
 
+# The pinned AR-Mahjong checkpoint has 42 classes. Some copies retain
+# Ultralytics' numeric metadata, so keep the published class order as a
+# compatibility fallback for that exact checkpoint shape.
+AR_MAHJONG_NAMES = (
+    '1B', '1C', '1D', '1F', '1S', '2B', '2C', '2D', '2F', '2S',
+    '3B', '3C', '3D', '3F', '3S', '4B', '4C', '4D', '4F', '4S',
+    '5B', '5C', '5D', '6B', '6C', '6D', '7B', '7C', '7D', '8B',
+    '8C', '8D', '9B', '9C', '9D', 'EW', 'GD', 'NW', 'RD', 'SW',
+    'WD', 'WW'
+)
+
+
 @dataclass
 class DetectionResult:
     image: object
@@ -65,6 +77,9 @@ class OnnxDetector:
         if self.input.shape != [1, 3, 640, 640]:
             raise ValueError('This ONNX detector requires a fixed 1×3×640×640 RGB input.')
         labels = ast.literal_eval(self.session.get_modelmeta().custom_metadata_map['names'])
+        if (len(labels) == len(AR_MAHJONG_NAMES)
+                and all(str(index) == label for index, label in labels.items())):
+            labels = dict(enumerate(AR_MAHJONG_NAMES))
         self.names = {int(index): label for index, label in labels.items()}
 
     def detect(self, source, class_ids, conf, imgsz, device):

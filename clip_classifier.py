@@ -16,7 +16,7 @@ class ClipClassifier:
         import torch
         from transformers import CLIPModel, CLIPProcessor
         if not (MODEL_DIR / 'pytorch_model.bin').is_file():
-            raise RuntimeError('CLIP weights are missing. Run .venv/bin/python clip_classifier.py --download, then try again.')
+            raise RuntimeError('CLIP weights are missing. Run python clip_classifier.py --download, then try again.')
         self.torch = torch
         self.processor = CLIPProcessor.from_pretrained(MODEL_DIR, local_files_only=True, use_fast=False)
         self.model = CLIPModel.from_pretrained(MODEL_DIR, local_files_only=True).eval()

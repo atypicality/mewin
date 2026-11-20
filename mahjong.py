@@ -64,8 +64,8 @@ def load_model(weights):
             from onnx_detector import OnnxDetector
             model = OnnxDetector(weights)
         except ModuleNotFoundError as exc:
-            raise ValueError('Run with .venv/bin/python mahjong.py; install dependencies '
-                             'with .venv/bin/python -m pip install -r requirements.txt.') from exc
+            raise ValueError('Run python mahjong.py; install dependencies '
+                             'with python -m pip install -r requirements.txt.') from exc
         if not dot_class_ids(model.names):
             raise ValueError('The ONNX model has no Mahjong dot tile labels.')
         return model
@@ -76,8 +76,7 @@ def load_model(weights):
             raise
         raise ValueError(
             'This Python interpreter does not have ultralytics installed. '
-            'Run with .venv/bin/python mahjong.py or select '
-            '.venv/bin/python as your IDE Python interpreter.'
+            'Run python mahjong.py after installing requirements.txt.'
         ) from exc
     weights = Path(weights).expanduser().resolve()
     coreml = weights.suffix == '.mlpackage'
