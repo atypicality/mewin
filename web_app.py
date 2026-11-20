@@ -92,6 +92,11 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(data)
 
     def do_GET(self):
+        if urlsplit(self.path).path == '/api/evaluation':
+            report = ROOT / 'outputs' / 'evaluation.json'
+            if not report.is_file():
+                return self.respond(404, {'error': 'No evaluation report found. Run python evaluate.py first.'})
+            return self.respond(200, json.loads(report.read_text()))
         if urlsplit(self.path).path == '/api/assistant/status':
             from gemini_assistant import status
             return self.respond(200, status())
