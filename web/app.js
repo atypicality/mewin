@@ -204,3 +204,50 @@ fetch('/api/assistant/status').then(response => response.json()).then(data => {
   $('assistant-config').textContent = data.configured
     ? `Ready · ${data.model}` : 'Setup: paste your Gemini API key into the project’s .env file. Then send a message; no restart needed.';
 }).catch(() => { $('assistant-config').textContent = 'Start the Python server to use Gemini.'; });
+
+const formatPercent = value => value == null ? '—' : `${(value * 100).toFixed(1)}%`;
+function renderAccuracyChart(svgId, rows, color = '#315f9c') {
+  if (!window.d3) return;
+  const svg = window.d3.select(`#${svgId}`);
+  const width = 560, height = 270;
+  const margin = { top: 20, right: 20, bottom: 58, left: 48 };
+  const x = window.d3.scaleBand().domain(rows.map(row => row.label)).range([margin.left, width - margin.right]).padding(.28);
+  const y = window.d3.scaleLinear().domain([0, 1]).range([height - margin.bottom, margin.top]);
+  svg.attr('viewBox', `0 0 ${width} ${height}`).selectAll('*').remove();
+  svg.append('g').attr('class', 'chart-grid').attr('transform', `translate(0,${height - margin.bottom})`)
+    .call(window.d3.axisBottom(x)).selectAll('text').attr('transform', 'rotate(-28)').style('text-anchor', 'end');
+  svg.append('g').attr('class', 'chart-grid').attr('transform', `translate(${margin.left},0)`)
+    .call(window.d3.axisLeft(y).ticks(5).tickFormat(window.d3.format('.0%')));
+  svg.selectAll('.bar').data(rows).join('rect').attr('class', 'bar').attr('x', row => x(row.label))
+    .attr('y', row => y(row.value || 0)).attr('width', x.bandwidth()).attr('height', row => y(0) - y(row.value || 0))
+    .attr('fill', color).append('title').text(row => `${row.label}: ${formatPercent(row.value)} (${row.passed}/${row.cases})`);
+  svg.selectAll('.bar-label').data(rows).join('text').attr('class', 'bar-label')
+    .attr('x', row => x(row.label) + x.bandwidth() / 2).attr('y', row => y(row.value || 0) - 6)
+    .attr('text-anchor', 'middle').text(row => formatPercent(row.value));
+}
+function renderEvaluation(report) {
+  const summary = report.summary || {};
+  const cards = Object.entries(summary).map(([split, data]) => {
+    const card = document.createElement('div'); card.className = 'accuracy-card';
+    card.innerHTML = `<span>${split} split</span><strong>${formatPercent(data.exact_hand_accuracy)}</strong><small>${data.passed}/${data.cases} exact matches</small>`;
+    return card;
+  });
+  $('accuracy-summary').replaceChildren(...cards);
+  const slices = Object.entries(summary).flatMap(([split, data]) => Object.entries(data.slices || {}).map(([slice, value]) => ({
+    label: `${split} · ${slice}`, value: value.exact_hand_accuracy, passed: value.passed, cases: value.cases
+  })));
+  renderAccuracyChart('accuracy-chart', slices);
+  const robustness = Object.entries(summary).flatMap(([split, data]) => [
+    { label: `${split} · original`, value: data.robustness?.original?.exact_hand_accuracy, passed: data.robustness?.original?.passed || 0, cases: data.robustness?.original?.cases || 0 },
+    { label: `${split} · darkened`, value: data.robustness?.darkened?.exact_hand_accuracy, passed: data.robustness?.darkened?.passed || 0, cases: data.robustness?.darkened?.cases || 0 }
+  ]);
+  renderAccuracyChart('robustness-chart', robustness, '#6684aa');
+  $('evaluation-status').textContent = `Last run ${new Date(report.timestamp_utc).toLocaleString()} · ${report.pipeline}`;
+  $('evaluation-download').href = URL.createObjectURL(new Blob([JSON.stringify(report, null, 2)], { type: 'application/json' }));
+}
+fetch('/api/evaluation').then(response => {
+  if (!response.ok) throw new Error('No report');
+  return response.json();
+}).then(renderEvaluation).catch(() => {
+  $('evaluation-status').textContent = 'Run python evaluate.py to generate an accuracy report.';
+});

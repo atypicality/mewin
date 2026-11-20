@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-20T02:42:44.849422+00:00",
-  "python": "3.9.6",
-  "weights": "/Users/brian/Documents/GitHub/mewin/models/mahjong-ar-yolov8n.onnx",
-  "weights_sha256": "babdb503fd5dd5640d9c232e37a56af3a01f3297aeeeb44e8f62fa57edbc2b9d",
+  "timestamp_utc": "2026-11-20T15:58:58.597631+00:00",
+  "python": "3.13.11",
+  "weights": "C:\\Users\\langd4\\Documents\\GitHub\\mewin\\models\\mahjong-ar-yolov8n.onnx",
+  "weights_sha256": "63b683c7f50e4e9c65492d53530e6722c58d2b34350480ee979fb8ba92b7fe5a",
   "confidence_threshold": 0.4,
   "pipeline": "web_app.analyze / YOLO / CPU / 640",
   "manifest": {
@@ -82,203 +82,142 @@
       },
       {
         "id": "T01",
-        "image": null,
-        "expected": null,
-        "status": "pending",
+        "image": "evaluation/images/IMG_3663.HEIC",
+        "expected": {
+          "5p": 1
+        },
+        "status": "ready",
         "split": "test",
         "slice": "clear",
         "robustness": true,
-        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+        "source_filename": "IMG_3663.HEIC",
+        "notes": "Five circles. Visually labeled by Codex before inference; teammate review pending. Supplied batch; capture-session independence unverified."
       },
       {
         "id": "T02",
-        "image": null,
-        "expected": null,
-        "status": "pending",
+        "image": "evaluation/images/IMG_3652.HEIC",
+        "expected": {
+          "3s": 1
+        },
+        "status": "ready",
         "split": "test",
         "slice": "clear",
         "robustness": true,
-        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+        "source_filename": "IMG_3652.HEIC",
+        "notes": "Three bamboo. Visually labeled by Codex before inference; teammate review pending. Supplied batch; capture-session independence unverified."
       },
       {
         "id": "T03",
-        "image": null,
-        "expected": null,
-        "status": "pending",
+        "image": "evaluation/images/IMG_3676.HEIC",
+        "expected": {
+          "1m": 1
+        },
+        "status": "ready",
         "split": "test",
         "slice": "clear",
         "robustness": true,
-        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+        "source_filename": "IMG_3676.HEIC",
+        "notes": "One character. Visually labeled by Codex before inference; teammate review pending. Supplied batch; capture-session independence unverified."
       },
       {
         "id": "T04",
-        "image": null,
-        "expected": null,
-        "status": "pending",
+        "image": "evaluation/images/IMG_3653.HEIC",
+        "expected": {
+          "1z": 1
+        },
+        "status": "ready",
         "split": "test",
         "slice": "clear",
         "robustness": true,
-        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+        "source_filename": "IMG_3653.HEIC",
+        "notes": "East wind. Visually labeled by Codex before inference; teammate review pending. Supplied batch; capture-session independence unverified."
       },
       {
         "id": "T05",
-        "image": null,
-        "expected": null,
-        "status": "pending",
+        "image": "evaluation/images/IMG_3679.HEIC",
+        "expected": {
+          "9p": 1,
+          "2p": 1,
+          "9m": 1
+        },
+        "status": "ready",
         "split": "test",
-        "slice": "clear",
-        "robustness": true,
-        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+        "slice": "multi_tile",
+        "robustness": false,
+        "source_filename": "IMG_3679.HEIC",
+        "notes": "Three separated tiles, mixed orientations. Visually labeled by Codex before inference; teammate review pending. Supplied batch; capture-session independence unverified."
       },
       {
         "id": "T06",
-        "image": null,
-        "expected": null,
-        "status": "pending",
+        "image": "evaluation/images/IMG_3681.HEIC",
+        "expected": {
+          "1s": 1,
+          "9p": 1
+        },
+        "status": "ready",
         "split": "test",
-        "slice": "clear",
-        "robustness": true,
-        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+        "slice": "multi_tile",
+        "robustness": false,
+        "source_filename": "IMG_3681.HEIC",
+        "notes": "Two separated tiles. Visually labeled by Codex before inference; teammate review pending. Supplied batch; capture-session independence unverified."
       },
       {
         "id": "T07",
-        "image": null,
-        "expected": null,
-        "status": "pending",
+        "image": "evaluation/images/IMG_3686.HEIC",
+        "expected": {
+          "8m": 1,
+          "5m": 1,
+          "9p": 1
+        },
+        "status": "ready",
         "split": "test",
-        "slice": "clear",
-        "robustness": true,
-        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+        "slice": "multi_tile",
+        "robustness": false,
+        "source_filename": "IMG_3686.HEIC",
+        "notes": "Three tiles in a row. Visually labeled by Codex before inference; teammate review pending. Supplied batch; capture-session independence unverified."
       },
       {
         "id": "T08",
-        "image": null,
-        "expected": null,
-        "status": "pending",
+        "image": "evaluation/images/IMG_3687.HEIC",
+        "expected": {
+          "8m": 1,
+          "5m": 1,
+          "9p": 1,
+          "8s": 1,
+          "1s": 1
+        },
+        "status": "ready",
         "split": "test",
-        "slice": "clear",
-        "robustness": true,
-        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+        "slice": "multi_tile",
+        "robustness": false,
+        "source_filename": "IMG_3687.HEIC",
+        "notes": "Five touching tiles, mixed orientations. Visually labeled by Codex before inference; teammate review pending. Supplied batch; capture-session independence unverified."
       },
       {
         "id": "T09",
-        "image": null,
-        "expected": null,
-        "status": "pending",
+        "image": "evaluation/images/IMG_3692.HEIC",
+        "expected": {
+          "4m": 1
+        },
+        "status": "ready",
         "split": "test",
-        "slice": "multi_tile",
+        "slice": "difficult",
         "robustness": false,
-        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+        "source_filename": "IMG_3692.HEIC",
+        "notes": "Sideways four characters. Visually labeled by Codex before inference; teammate review pending. Supplied batch; capture-session independence unverified."
       },
       {
         "id": "T10",
-        "image": null,
-        "expected": null,
-        "status": "pending",
-        "split": "test",
-        "slice": "multi_tile",
-        "robustness": false,
-        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
-      },
-      {
-        "id": "T11",
-        "image": null,
-        "expected": null,
-        "status": "pending",
-        "split": "test",
-        "slice": "multi_tile",
-        "robustness": false,
-        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
-      },
-      {
-        "id": "T12",
-        "image": null,
-        "expected": null,
-        "status": "pending",
-        "split": "test",
-        "slice": "multi_tile",
-        "robustness": false,
-        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
-      },
-      {
-        "id": "T13",
-        "image": null,
-        "expected": null,
-        "status": "pending",
+        "image": "evaluation/images/IMG_3695.HEIC",
+        "expected": {
+          "2z": 1
+        },
+        "status": "ready",
         "split": "test",
         "slice": "difficult",
         "robustness": false,
-        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
-      },
-      {
-        "id": "T14",
-        "image": null,
-        "expected": null,
-        "status": "pending",
-        "split": "test",
-        "slice": "difficult",
-        "robustness": false,
-        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
-      },
-      {
-        "id": "T15",
-        "image": null,
-        "expected": null,
-        "status": "pending",
-        "split": "test",
-        "slice": "difficult",
-        "robustness": false,
-        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
-      },
-      {
-        "id": "T16",
-        "image": null,
-        "expected": null,
-        "status": "pending",
-        "split": "test",
-        "slice": "difficult",
-        "robustness": false,
-        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
-      },
-      {
-        "id": "T17",
-        "image": null,
-        "expected": null,
-        "status": "pending",
-        "split": "test",
-        "slice": "negative",
-        "robustness": false,
-        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
-      },
-      {
-        "id": "T18",
-        "image": null,
-        "expected": null,
-        "status": "pending",
-        "split": "test",
-        "slice": "negative",
-        "robustness": false,
-        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
-      },
-      {
-        "id": "T19",
-        "image": null,
-        "expected": null,
-        "status": "pending",
-        "split": "test",
-        "slice": "negative",
-        "robustness": false,
-        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
-      },
-      {
-        "id": "T20",
-        "image": null,
-        "expected": null,
-        "status": "pending",
-        "split": "test",
-        "slice": "negative",
-        "robustness": false,
-        "notes": "Collect and manually label a fresh photo; use {} for verified negative images."
+        "source_filename": "IMG_3695.HEIC",
+        "notes": "Sideways south wind. Visually labeled by Codex before inference; teammate review pending. Supplied batch; capture-session independence unverified."
       }
     ]
   },
@@ -315,48 +254,43 @@
       }
     },
     "test": {
-      "cases": 0,
-      "passed": 0,
-      "exact_hand_accuracy": null,
-      "slices": {},
+      "cases": 10,
+      "passed": 8,
+      "exact_hand_accuracy": 0.8,
+      "slices": {
+        "clear": {
+          "cases": 4,
+          "passed": 4,
+          "exact_hand_accuracy": 1.0
+        },
+        "difficult": {
+          "cases": 2,
+          "passed": 1,
+          "exact_hand_accuracy": 0.5
+        },
+        "multi_tile": {
+          "cases": 4,
+          "passed": 3,
+          "exact_hand_accuracy": 0.75
+        }
+      },
       "robustness": {
-        "pairs": 0,
-        "flip_rate": null,
+        "pairs": 4,
+        "flip_rate": 0.0,
         "original": {
-          "cases": 0,
-          "passed": 0,
-          "exact_hand_accuracy": null
+          "cases": 4,
+          "passed": 4,
+          "exact_hand_accuracy": 1.0
         },
         "darkened": {
-          "cases": 0,
-          "passed": 0,
-          "exact_hand_accuracy": null
+          "cases": 4,
+          "passed": 4,
+          "exact_hand_accuracy": 1.0
         }
       }
     }
   },
-  "pending_cases": [
-    "T01",
-    "T02",
-    "T03",
-    "T04",
-    "T05",
-    "T06",
-    "T07",
-    "T08",
-    "T09",
-    "T10",
-    "T11",
-    "T12",
-    "T13",
-    "T14",
-    "T15",
-    "T16",
-    "T17",
-    "T18",
-    "T19",
-    "T20"
-  ],
+  "pending_cases": [],
   "results": [
     {
       "id": "D01",
@@ -519,6 +453,279 @@
       },
       "extra": {
         "1S": 1
+      },
+      "failure_type": "missing_and_extra"
+    },
+    {
+      "id": "T01",
+      "image": "evaluation/images/IMG_3663.HEIC",
+      "expected": {
+        "5p": 1
+      },
+      "status": "ready",
+      "split": "test",
+      "slice": "clear",
+      "robustness": {
+        "brightness_factor": 0.7,
+        "observed": {
+          "5p": 1
+        },
+        "flipped": false,
+        "passed": true,
+        "missing": {},
+        "extra": {},
+        "failure_type": "pass"
+      },
+      "source_filename": "IMG_3663.HEIC",
+      "notes": "Five circles. Visually labeled by Codex before inference; teammate review pending. Supplied batch; capture-session independence unverified.",
+      "image_sha256": "eb23d6a1540bbc7a4b138a5c5856a2a6d9166e8a022a85ca19086ad9c599af2d",
+      "observed": {
+        "5p": 1
+      },
+      "passed": true,
+      "missing": {},
+      "extra": {},
+      "failure_type": "pass"
+    },
+    {
+      "id": "T02",
+      "image": "evaluation/images/IMG_3652.HEIC",
+      "expected": {
+        "3s": 1
+      },
+      "status": "ready",
+      "split": "test",
+      "slice": "clear",
+      "robustness": {
+        "brightness_factor": 0.7,
+        "observed": {
+          "3s": 1
+        },
+        "flipped": false,
+        "passed": true,
+        "missing": {},
+        "extra": {},
+        "failure_type": "pass"
+      },
+      "source_filename": "IMG_3652.HEIC",
+      "notes": "Three bamboo. Visually labeled by Codex before inference; teammate review pending. Supplied batch; capture-session independence unverified.",
+      "image_sha256": "4a79d8155db9fc53c2f4bf5b56ad4946c1ace81a7d6461aa4c7211f8e3987b27",
+      "observed": {
+        "3s": 1
+      },
+      "passed": true,
+      "missing": {},
+      "extra": {},
+      "failure_type": "pass"
+    },
+    {
+      "id": "T03",
+      "image": "evaluation/images/IMG_3676.HEIC",
+      "expected": {
+        "1m": 1
+      },
+      "status": "ready",
+      "split": "test",
+      "slice": "clear",
+      "robustness": {
+        "brightness_factor": 0.7,
+        "observed": {
+          "1m": 1
+        },
+        "flipped": false,
+        "passed": true,
+        "missing": {},
+        "extra": {},
+        "failure_type": "pass"
+      },
+      "source_filename": "IMG_3676.HEIC",
+      "notes": "One character. Visually labeled by Codex before inference; teammate review pending. Supplied batch; capture-session independence unverified.",
+      "image_sha256": "8182dcd90f1e35611424ca1b9306f20b85c6d4005f6156634c68ab0a0565cc75",
+      "observed": {
+        "1m": 1
+      },
+      "passed": true,
+      "missing": {},
+      "extra": {},
+      "failure_type": "pass"
+    },
+    {
+      "id": "T04",
+      "image": "evaluation/images/IMG_3653.HEIC",
+      "expected": {
+        "1z": 1
+      },
+      "status": "ready",
+      "split": "test",
+      "slice": "clear",
+      "robustness": {
+        "brightness_factor": 0.7,
+        "observed": {
+          "1z": 1
+        },
+        "flipped": false,
+        "passed": true,
+        "missing": {},
+        "extra": {},
+        "failure_type": "pass"
+      },
+      "source_filename": "IMG_3653.HEIC",
+      "notes": "East wind. Visually labeled by Codex before inference; teammate review pending. Supplied batch; capture-session independence unverified.",
+      "image_sha256": "a606d26c700f51bea93e510c90a8306295d0260aeba88ff884459222eb599861",
+      "observed": {
+        "1z": 1
+      },
+      "passed": true,
+      "missing": {},
+      "extra": {},
+      "failure_type": "pass"
+    },
+    {
+      "id": "T05",
+      "image": "evaluation/images/IMG_3679.HEIC",
+      "expected": {
+        "9p": 1,
+        "2p": 1,
+        "9m": 1
+      },
+      "status": "ready",
+      "split": "test",
+      "slice": "multi_tile",
+      "robustness": null,
+      "source_filename": "IMG_3679.HEIC",
+      "notes": "Three separated tiles, mixed orientations. Visually labeled by Codex before inference; teammate review pending. Supplied batch; capture-session independence unverified.",
+      "image_sha256": "0e13670966a618685ce1e42aa58542c155a0e9bead47614d9a01c58e6518c80d",
+      "observed": {
+        "9p": 1,
+        "2p": 1,
+        "9m": 1
+      },
+      "passed": true,
+      "missing": {},
+      "extra": {},
+      "failure_type": "pass"
+    },
+    {
+      "id": "T06",
+      "image": "evaluation/images/IMG_3681.HEIC",
+      "expected": {
+        "1s": 1,
+        "9p": 1
+      },
+      "status": "ready",
+      "split": "test",
+      "slice": "multi_tile",
+      "robustness": null,
+      "source_filename": "IMG_3681.HEIC",
+      "notes": "Two separated tiles. Visually labeled by Codex before inference; teammate review pending. Supplied batch; capture-session independence unverified.",
+      "image_sha256": "3d44f7a01af3ccd3884ca1639456feca496bd1448a1f7dcf85fefe91c7befe74",
+      "observed": {
+        "9p": 1,
+        "1s": 1
+      },
+      "passed": true,
+      "missing": {},
+      "extra": {},
+      "failure_type": "pass"
+    },
+    {
+      "id": "T07",
+      "image": "evaluation/images/IMG_3686.HEIC",
+      "expected": {
+        "8m": 1,
+        "5m": 1,
+        "9p": 1
+      },
+      "status": "ready",
+      "split": "test",
+      "slice": "multi_tile",
+      "robustness": null,
+      "source_filename": "IMG_3686.HEIC",
+      "notes": "Three tiles in a row. Visually labeled by Codex before inference; teammate review pending. Supplied batch; capture-session independence unverified.",
+      "image_sha256": "94a6b3755e2243f866f0a15c300c67985e20553683a4b9d906dd0c105d9d4cce",
+      "observed": {
+        "8m": 1,
+        "9p": 1,
+        "5m": 1
+      },
+      "passed": true,
+      "missing": {},
+      "extra": {},
+      "failure_type": "pass"
+    },
+    {
+      "id": "T08",
+      "image": "evaluation/images/IMG_3687.HEIC",
+      "expected": {
+        "8m": 1,
+        "5m": 1,
+        "9p": 1,
+        "8s": 1,
+        "1s": 1
+      },
+      "status": "ready",
+      "split": "test",
+      "slice": "multi_tile",
+      "robustness": null,
+      "source_filename": "IMG_3687.HEIC",
+      "notes": "Five touching tiles, mixed orientations. Visually labeled by Codex before inference; teammate review pending. Supplied batch; capture-session independence unverified.",
+      "image_sha256": "d9dc890d2dac024ef443a749a5ff0b71d9c3bef84b91680aa014a9d559d2923d",
+      "observed": {
+        "5m": 1,
+        "9p": 1,
+        "8m": 1,
+        "8s": 1
+      },
+      "passed": false,
+      "missing": {
+        "1s": 1
+      },
+      "extra": {},
+      "failure_type": "missed_tiles"
+    },
+    {
+      "id": "T09",
+      "image": "evaluation/images/IMG_3692.HEIC",
+      "expected": {
+        "4m": 1
+      },
+      "status": "ready",
+      "split": "test",
+      "slice": "difficult",
+      "robustness": null,
+      "source_filename": "IMG_3692.HEIC",
+      "notes": "Sideways four characters. Visually labeled by Codex before inference; teammate review pending. Supplied batch; capture-session independence unverified.",
+      "image_sha256": "663746dee427a709fb55df517bd8de6f9a85a2f2b2db88cbd742bb2ff9f29acc",
+      "observed": {
+        "4m": 1
+      },
+      "passed": true,
+      "missing": {},
+      "extra": {},
+      "failure_type": "pass"
+    },
+    {
+      "id": "T10",
+      "image": "evaluation/images/IMG_3695.HEIC",
+      "expected": {
+        "2z": 1
+      },
+      "status": "ready",
+      "split": "test",
+      "slice": "difficult",
+      "robustness": null,
+      "source_filename": "IMG_3695.HEIC",
+      "notes": "Sideways south wind. Visually labeled by Codex before inference; teammate review pending. Supplied batch; capture-session independence unverified.",
+      "image_sha256": "348740ee932622c0e3f9e29bddda5470c70391056dd9623a8abc62dc97d07aab",
+      "observed": {
+        "3z": 1
+      },
+      "passed": false,
+      "missing": {
+        "2z": 1
+      },
+      "extra": {
+        "3z": 1
       },
       "failure_type": "missing_and_extra"
     }

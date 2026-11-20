@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mahjong tile reader</title><link rel="stylesheet" href="/style.css?v=gemini-1"><script src="/app.js?v=gemini-1" defer></script></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mahjong tile reader</title><link rel="stylesheet" href="/style.css?v=accuracy-1"><script src="https://cdn.jsdelivr.net/npm/d3@7" defer></script><script src="/app.js?v=accuracy-1" defer></script></head>
 <body>
 <header><a class="brand" href="/">Mahjong tile reader</a><span class="local">Local app</span></header>
 <main>
@@ -42,4 +42,9 @@
 <p id="chat-status" role="status" aria-live="polite"></p>
 </form>
 </section></div>
+<section class="panel evaluation-panel" id="evaluation-panel" aria-labelledby="evaluation-title">
+<div class="evaluation-heading"><div><h2 id="evaluation-title">Model accuracy</h2><p id="evaluation-status" class="hint">Loading the latest evaluation report…</p></div><a id="evaluation-download" class="report-link" download="evaluation.json">Download JSON report</a></div>
+<div id="accuracy-summary" class="accuracy-summary"></div>
+<div class="charts"><div><h3>Exact-hand accuracy by slice</h3><svg id="accuracy-chart" role="img" aria-label="Exact-hand accuracy by evaluation slice"></svg></div><div><h3>Brightness robustness</h3><svg id="robustness-chart" role="img" aria-label="Accuracy before and after darkening"></svg></div></div>
+</section>
 </main></body></html>
