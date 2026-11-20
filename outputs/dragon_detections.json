@@ -1,6 +1,0 @@
-{
-  "image": "/Users/brian/Library/CloudStorage/Box-Box/Documents/Python/examples/dragon.jpg",
-  "weights": "/Users/brian/Library/CloudStorage/Box-Box/Documents/Python/models/mahjong-vis.mlpackage",
-  "confidence_threshold": 0.4,
-  "detections": []
-}
